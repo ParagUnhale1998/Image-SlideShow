@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image SLider</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 5%;
+            box-sizing: border-box;
+            background-color: #d7d7d7;
+
+        }
+
+        #Image-container {
+            width: 100%;
+            border: 1px solid black;
+            box-shadow: 8px 8px 10px black;
+            margin: 0;
+            padding: 0;
+        }
+
+        #Image-container img {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="Image-container">
+        <img src="/Images/1.jpg" alt="" id="img">
+        <!-- we can also create element dom and append img to contaienr -->
+    </div>
+    <script>
+        const imageContainer = document.querySelector("#Image-container")
+        const image = document.getElementById("img");
+
+        let i = 0;
+        let imagesArray = ["Images/1.jpg", "Images/2.jpg", "Images/3.jpg", "Images/4.jpg", "Images/5.jpg", "Images/6.jpg", "Images/7.jpg",];
+
+        setInterval(function () {
+            image.src = imagesArray[i];
+            i++
+            if (i === imagesArray.length) {
+                i = 0;
+            }
+        }, 2000)
+
+   // using outside folder images 
+
+        /*
+            let imgCount = 1;
+            let img = document.getElementById("img");
+            setInterval(() => {
+                if (imgCount > 7) {
+                    imgCount = 1
+                }
+                img.src = `Images/${imgCount}.jpg`;
+                imgCount++
+            }, 2000)
+            */
+    </script>
+</body>
+
+</html>
